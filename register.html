@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta Access-Control-Allow-Origin="*">
+    <title>Amalthea Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!--link rel="stylesheet" href="sweetalert2.min.css" /-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />   
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
+
+      input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfeild; /* Firefox */
+      }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        background-image: linear-gradient(to bottom right, #ff4d00, #1500ff);
+        color: white;
+        border: 0px;
+        padding: 20px;
+      }
+      .navbar {
+        font-family: "Open Sans", sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      body {
+        background-color: #313132;
+      }
+      .mega_container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 4% !important;
+        text-align: center;
+        width: 60%;
+        margin: auto;
+        align-items: center;
+      }
+      .head {
+        width: 100%;
+        font-family: "Open Sans", sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        color: #ff4d00;
+      }
+      .time {
+        display: flex;
+      }
+      .countdown-div {
+        border: 1px solid #ff4d00;
+        padding: 5%;
+        align-items: center;
+      }
+      .time {
+        margin: 20px;
+        justify-content: space-evenly;
+      }
+      .container_time {
+        padding: 10px;
+        align-items: center;
+        text-align: center;
+        border: 0.5px solid #ff4d00;
+        margin: 3px;
+        background-color: #ff4d00c2;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        border-radius: 10px;
+      }
+      .fun {
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        padding: 10px;
+        font-size: 20px;
+      }
+      .register_now {
+        padding: 10px;
+        font-size: 20px;
+        color: #ff4d00;
+        font-family: "Open Sans", sans-serif;
+        background-color: #00000000;
+        border: 0.5px solid #ff4d00;
+        border-radius: 10px;
+        transition: 0.5s;
+        margin: 5px;
+        margin-top: 10%;
+      }
+
+      .register_now:hover {
+        background-color: #ff4d00c2;
+        color: white;
+      }
+      .Registration-Form {
+        padding: 20px;
+        border: 1px solid #ff4d00;
+        border-radius: 20px;
+        width: 100%;
+      }
+      .q {
+        padding: 5px;
+        display: flex;
+      }
+      .q label {
+        width: 50%;
+        text-align: start;
+        font-family: cursive;
+        color: #ff4d00;
+      }
+      .q input {
+        width: 50%;
+        padding: 10px;
+        background-color: #313132;
+        border: none;
+        border-bottom: 1px solid #ff4d00;
+        color: white;
+      }
+      #error {
+        transition: 1s;
+      }
+
+      .hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="navbar">Amalthea 2023</div>
+    </nav>
+    <div class="mega_container">
+      <form method="post" class="Registration-Form" id="Registration-Form">
+        <div class="q">
+          <label for="username">Enter Name</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter Username"
+            required
+          />
+        </div>
+
+        <div class="q">
+          <label for="age">Enter Age:</label>
+          <input
+            type="number"
+            name="age"
+            id="age"
+            min="0"
+            max="200"
+            placeholder="Enter Age"
+            required
+          />
+        </div>
+        <div class="q">
+          <label for="email">Enter Email:</label>
+
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter Email"
+            required
+          />
+        </div>
+        <div class="q">
+          <label for="phone">Enter Mobile:</label>
+          <input
+            type="number"
+            name="phone"
+            id="phone"
+            min="10000000"
+            max="9999999999"
+            placeholder="Enter Phone Number"
+            required
+          />
+        </div>
+        <input hidden id="href" name="href">
+        <button class="register_now" onclick="Success(event)">REGISTER</button>
+        <button class="register_now" onclick="know_more(event)">
+          KNOW MORE
+        </button>
+      </form>
+    </div>
+    
+
+    <script>
+        document.getElementById("href").value = window.location.href;
+      const parent = "/";
+            // Discovery doc URL for APIs used by the quickstart
+
+      function know_more(e) {
+        e.preventDefault();
+        location.replace("about.html");
+        //window.location.href = parent + "about.html" ;
+      }
+
+      function Success(e) {
+        e.preventDefault();
+        var vaild = document
+          .getElementsByClassName("Registration-Form")[0]
+          .reportValidity();
+        if (!vaild) {
+          return;
+        }
+        var age = parseInt(document.getElementById("age").value);
+        var name = document.getElementById("username").value;
+        var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        // Disabled as Google Spreadsheet is not working
+        //document.getElementsByClassName("Registration-Form")[0].submit();
+        Swal.fire({
+          title: "Sucess",
+          text: "You are registered for Amalathea 2023",
+          icon: "success",
+          confirmButtonText: "Cool",
+        })
+      }
+    </script>
+  </body>
+</html>

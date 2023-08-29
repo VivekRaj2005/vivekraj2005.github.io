@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amalthea Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            background-image: linear-gradient(to bottom right,#ff4d00, #1500ff);
+            color:white;
+            border: 0px;
+            padding:20px;
+
+        }
+        .navbar{
+            font-family: cursive;
+            font-size: 30px;
+            font-weight: bold;
+
+        }
+        body{
+            background-color: #313132;
+        }
+        .faq{
+            margin: 10px;
+            padding: 10px;
+        }
+        .q{
+            padding: 10px;
+            color: rgb(211, 211, 211);
+            font-family: cursive;
+
+        }
+        .q h5{
+            font-size: 20px;
+            padding: 5px;;
+        }
+
+        .q p, .q li, .q ul{
+            padding: 10px;
+        }
+        
+        .register_now{
+            padding:10px;
+            font-size: 20px;
+            color: #ff4d00;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #00000000;
+            border: 0.5px solid #ff4d00;
+            border-radius: 10px;
+            transition: 0.5s;
+            margin: 5px;
+        }
+
+        .register_now:hover{
+            background-color: #ff4d00c2;
+            color: white;
+        
+        }
+        .flex{
+            display: flex;
+            justify-content: space-around;
+            margin: 10px;
+        }
+        .map{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            Amalthea 2023
+        </div>
+    </nav>
+    <div class="content">
+        <div class="faq">
+            <div class="q">
+        <h5>Where is Amalthea held?</h5>
+        <p>Amalthea is held at the very heart of IIT Gandhinagar</p>
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.7899297207655!2d72.68575707500904!3d23.214325109145832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2be7df64cce5%3A0xd65c598110e14ba1!2sHockey%20Ground%20IIT%20Gandhinagar!5e0!3m2!1sen!2sin!4v1693202845845!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+    <div class="q">
+        <h5>What is Amalthea?</h5>
+        <p>Amalthea is India's first Student run tech fest. It includes veritey of events like Night Drone Racing, Tech Expo, and a lot of other intesting events. Amalathea is a dynamic and innovative tech fest that brings together a diverse community of technology enthusiasts, professionals, and visionaries. With its vibrant theme "Unveiling Tomorrow's Possibilities," Amalathea is dedicated to exploring the cutting-edge frontiers of science, engineering, and creativity. This exciting event is designed to inspire, educate, and connect individuals who are passionate about technology and its limitless potential.
+
+            At Amalathea, participants can immerse themselves in a multifaceted experience that includes enlightening workshops, thought-provoking seminars, captivating exhibitions, and engaging competitions. The fest's agenda is carefully crafted to offer something for everyone, whether you're a student eager to learn, an expert aiming to share insights, or a company looking to showcase groundbreaking innovations. </p>
+    </div>
+    <div class="q">
+        <h5>When is Amalthea?</h5>
+        <p>It is yet to be announced</p>
+    </div>
+    <div class="q">
+        <h5>What are the events in Amalathea?</h5>
+        <ul>
+            <li>Drone Racing League</li>
+            <li>ICON: Innovation Conferance</li>
+            <li>Conclave and Symposium</li>
+            <li>BrainWiz</li>
+        </ul>
+    </div>
+    <div class="q">
+        <h5>What is Amalthea?</h5>
+        <p>Amalthea is India's first Student run tech fest. It includes veritey of events like Night Drone Racing, Tech Expo, and a lot of other intesting events </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="flex">
+    <button class="register_now" onclick="back()">HOME</button>
+    <script>
+        const parent = "/";
+        function back() {
+            location.replace("index.html");
+            //window.location.href = parent + "index.html" ;
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amalthea Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            background-image: linear-gradient(to bottom right,#ff4d00, #1500ff);
+            color:white;
+            border: 0px;
+            padding:20px;
+
+        }
+        .navbar{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+
+        }
+        body{
+            background-color: #313132;
+        }
+        .mega_container
+        {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 4%;
+            text-align: center;
+            
+        }
+        .head{
+            width: 100%;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 30px;
+            font-weight: bold;
+            color:#ff4d00;
+        }
+        .time{
+            display: flex;
+        }
+        .countdown-div{
+            border:1px solid #ff4d00;
+            padding: 5%;
+            align-items: center;
+        }
+        .time{
+            margin: 20px;
+            justify-content: space-evenly;
+        }
+        .container_time{
+            padding: 10px;
+            align-items: center;
+            text-align: center;
+            border: 0.5px solid #ff4d00;
+            margin: 3px;
+            background-color: #ff4d00c2;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            border-radius: 10px;
+            
+        }
+        .fun{
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            padding: 10px;
+            font-size: 20px;;
+        }
+        .register_now{
+            padding:10px;
+            font-size: 20px;
+            color: #ff4d00;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #00000000;
+            border: 0.5px solid #ff4d00;
+            border-radius: 10px;
+            transition: 0.5s;
+            margin: 5px;
+        }
+
+        .register_now:hover{
+            background-color: #ff4d00c2;
+            color: white;
+        
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            Amalthea 2023
+        </div>
+    </nav>
+    <div class="mega_container">
+    <div class="countdown-div">
+
+        <div class="head">
+            Time Left For Amalthea 2023
+        </div>
+        <div class="time">
+
+            <div class="container_time">
+                <div class="actual" id="days">00</div>Days 
+            </div>
+            <div class="container_time">
+                <div class="actual" id="hrs">00</div>Hours 
+            </div>
+            <div class="container_time">
+                <div class="actual" id="min">00</div>Minutes 
+            </div>
+            <div class="container_time">
+                <div class="actual" id="sec">00</div>Seconds 
+            </div>
+            
+        </div>
+        <div class="fun">
+            Let the Fun Begin!
+        </div>
+        
+        <button class="register_now" onclick="register()">REGISTER</button>
+        <button class="register_now" onclick="know_more()">KNOW MORE</button>
+    </div>
+    </div>
+    <script>
+	
+    const parent = "/";
+    function register() {
+        location.replace("register.html");
+        //window.location.href = parent + "register.html" ;
+    }
+
+    function know_more() {
+        location.replace("about.html");
+        //window.location.href = parent + "about.html" ;
+    }
+    const amaltheaTime = new Date(2023,10,31,12,0,0);
+    var continous = setInterval(function() {
+        var currentTime = new Date();
+        var diff =  amaltheaTime - currentTime;
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        document.getElementById("sec").childNodes[0].data=seconds.toString();
+        document.getElementById("min").childNodes[0].data=minutes.toString();
+        document.getElementById("hrs").childNodes[0].data=hours.toString();
+        document.getElementById("days").childNodes[0].data=days.toString();
+        }, 1000)
+    </script>
+</body>
+</html>
