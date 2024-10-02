@@ -14,7 +14,7 @@ function Navbar() {
           <Link to="/" className="mr-5 hover:text-white">
             Home
           </Link>
-          <Link to="/" className="mr-5 hover:text-white">
+          <Link to="/projects" className="mr-5 hover:text-white">
             Projects
           </Link>
           <Link to="/" className="mr-5 hover:text-white">

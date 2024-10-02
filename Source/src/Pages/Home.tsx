@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <section className="text-gray-400 bg-gray-900 body-font px-20">
+    <section className="text-gray-400 bg-gray-900 body-font lg:px-20 px-5">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0 mb-10">
           <img
@@ -16,6 +16,7 @@ function Home() {
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
             Vivek Raj
           </h1>
+          <p className="flex-grow text-indigo-400 border-b-2 border-indigo-500 py-2 text-lg px-1 mb-5 w-full">Breif Introduction</p>
           <p className="mb-8 leading-relaxed">
             Vivek Raj is a second-year BTech student at IIT Gandhinagar,
             currently holding the position of Technical Officer for the Student
@@ -30,17 +31,18 @@ function Home() {
           </p>
           <div className="flex justify-center">
             <Link
-              to="#"
-              className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+              to="/projects"
+              className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded lg:text-lg text-md"
             >
-              Projects <i className="bi bi-box-arrow-up-right ml-5"></i>
+              Projects{" "}
+              <i className="bi bi-box-arrow-up-right ml-5 lg:text-lg text-md lg:block hidden"></i>
             </Link>
-            <Link   
+            <Link
               to="#"
-              className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg"
+              className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded lg:text-lg text-md"
             >
-              Download CV <i className="bi bi-cloud-arrow-down-fill ml-5"></i>
-
+              Download CV{" "}
+              <i className="bi bi-cloud-arrow-down-fill ml-5 lg:text-lg text-md lg:block hidden"></i>
             </Link>
           </div>
         </div>
