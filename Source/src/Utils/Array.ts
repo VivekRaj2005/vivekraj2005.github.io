@@ -1,5 +1,7 @@
-export function Groupify(array: Array<any>, memebers: number): Array<typeof array> {
-    
+export function Groupify(
+  array: Array<any>,
+  memebers: number
+): Array<typeof array> {
   const return_array: Array<typeof array> = [];
   for (let index = 0; index < array.length; index++) {
     const element = array[index];
@@ -37,6 +39,14 @@ export function createNegativeIndexingArray(arr: Array<any>) {
       }
       target[prop] = value;
       return true;
-    }
+    },
   });
+}
+
+export function JSONtoFormData(json: { [key: string]: any }): FormData {
+  const formData = new FormData();
+  for (const key in json) {
+    formData.append(key, json[key]);
+  }
+  return formData;
 }

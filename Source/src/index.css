@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  overflow: -moz-scrollbars-none; /* Hides the scrollbar */
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+
+.rc-scrollbars-thumb {
+  background-color: rgb(129 140 248) !important;
+}

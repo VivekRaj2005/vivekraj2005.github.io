@@ -1,5 +1,6 @@
 import Me from "../Assets/Me.jpg";
 import { Link } from "react-router-dom";
+import CV from "../Assets/CV.pdf";
 
 function Home() {
   return (
@@ -16,18 +17,20 @@ function Home() {
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
             Vivek Raj
           </h1>
-          <p className="flex-grow text-indigo-400 border-b-2 border-indigo-500 py-2 text-lg px-1 mb-5 w-full">Breif Introduction</p>
+          <p className="flex-grow text-indigo-400 border-b-2 border-indigo-500 py-2 text-lg px-1 mb-5 w-full">
+            Breif Introduction
+          </p>
           <p className="mb-8 leading-relaxed">
             Vivek Raj is a second-year BTech student at IIT Gandhinagar,
-            currently holding the position of Technical Officer for the Student
-            Election Commission and the Webmaster for the Student Academic
-            Council. He has held the title as the winner of Software Development
-            in HackRush ‘24. He has an excellent aptitude for software
-            development and maintenance. He is also interested in Open Source
-            Initiative and has been an Arch Linux user since 2019. He has also
-            worked on hands-on projects with organisations like Amalthea and
-            Blithcron. His area of expertise in Web Development spans ReactJS,
-            Vite Bundle, Typescript, NodeJS, Sockets, MongoDB and Firebase.
+            currently holding the position of Election Commissioner for the
+            Student Election Commission. He has held the title as the winner of
+            Software Development in HackRush ‘24. He has an excellent aptitude
+            for software development and maintenance. He is also interested in
+            Open Source Initiative and has been an Arch Linux user since 2019.
+            He has also worked on hands-on projects with organisations like
+            Amalthea and Blithcron. His area of expertise in Web Development
+            spans ReactJS, Vite Bundle, Typescript, NodeJS, Sockets, MongoDB and
+            Firebase.
           </p>
           <div className="flex justify-center">
             <Link
@@ -38,7 +41,9 @@ function Home() {
               <i className="bi bi-box-arrow-up-right ml-5 lg:text-lg text-md lg:block hidden"></i>
             </Link>
             <Link
-              to="#"
+              to={CV}
+              download={"VivekRajCV.pdf"}
+              target="_blank"
               className="ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded lg:text-lg text-md"
             >
               Download CV{" "}

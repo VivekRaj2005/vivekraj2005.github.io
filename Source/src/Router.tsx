@@ -6,6 +6,7 @@ import Projects from "./Pages/Projects";
 import ProjectOverlay from "./Pages/ProjectOverlay";
 import { Project, WebProjects } from "./Data/Projects";
 import ResponsibilitiesSkills from "./Pages/Experiance";
+import Contact from "./Pages/Contact";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/experiance" element={<ResponsibilitiesSkills />} />
         <Route path="/project" element={<ProjectOverlay />}>
           {WebProjects.map((project: Project, key: number) => {

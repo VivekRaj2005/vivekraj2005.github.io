@@ -20,8 +20,8 @@ function Navbar() {
           <Link to="/experiance" className="mr-5 hover:text-white">
             Experiance
           </Link>
-          <Link to="/" className="mr-5 hover:text-white">
-            About & Contact
+          <Link to="/contact" className="mr-5 hover:text-white">
+            Contact
           </Link>
         </nav>
       </div>

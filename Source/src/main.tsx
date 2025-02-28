@@ -1,10 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import Router from './Router'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import Router from "./Router";
+import { Scrollbars } from "rc-scrollbars";
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Router />
-  </StrictMode>,
-)
+    <Scrollbars style={{ height: "100vh", width: "100vw" }} autoHide hideTracksWhenNotNeeded>
+      <Router />
+    </Scrollbars>
+  </StrictMode>
+);
