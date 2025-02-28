@@ -4,7 +4,13 @@ import SACPage from "../Assets/SACPage.jpg";
 import SACCMS from "../Assets/SAC-CMS.jpg";
 import AML from "../Assets/Amalthea '23.jpg";
 import EGate from "../Assets/E Gate.jpg";
+import AML24 from "../Assets/AML 24.png";
+import HealthW from "../Assets/HealthWarriors.jpg";
+import Blith24 from "../Assets/Blith24.jpg";
+import VertiClean from "../Assets/VertiClean.jpg";
+
 import EGateSystem from "../Pages/Projects/EGateSystem";
+import HealthWarriors from "../Pages/Projects/Health Warrior";
 
 export interface Project {
   name: string;
@@ -16,7 +22,18 @@ export interface Project {
   stacks: Array<string>;
 }
 
-const Data: Array<Project> = [
+export const WebProjects: Array<Project> = [
+  {
+    org: "Odoo Hackathon",
+    name: "Health Warriors",
+    image: HealthW,
+    bio: "HealthWarriors can revolutionize rural healthcare by making quality medical advice, diagnostics, and government benefits accessible to all—with just an Aadhaar number. Its chatbot and urban doctor network can save lives, reduce healthcare disparities, and improve overall public health",
+    stacks: [
+      "https://img.shields.io/badge/Tech_Stack-MERN-blue?style=for-the-badge",
+    ],
+    source: "/project/HealthWarriors",
+    page: HealthWarriors,
+  },
   {
     org: "HackRush '24",
     name: "E Gate Management",
@@ -66,22 +83,41 @@ const Data: Array<Project> = [
   },
   {
     org: "Amalthea '23",
-    name: "AML '23 Website",
+    name: "Amalthea '23 Website",
     image: AML,
-    bio: "Maintaining the Academic Council page for IIT Gandhinagar is crucial for ensuring that students and faculty have access to essential information about academic policies, initiatives, and discussions. This page serves as a central hub for updates on council meetings, agendas, and outcomes, fostering transparency and engagement within the academic community.",
+    bio: "A dedicated platform for AML 24, providing event details, registration, and updates for a seamless tech summit experience.",
+    stacks: [
+      "https://img.shields.io/badge/Tech_Stack-MERN-blue?style=for-the-badge",
+    ],
+  },
+  {
+    org: "Amalthea '24",
+    name: "Amalthea '24 Website",
+    image: AML24,
+    bio: "A dedicated platform for AML 24, providing event details, registration, and updates for a seamless tech summit experience.",
     stacks: [
       "https://img.shields.io/badge/Tech_Stack-MERN-blue?style=for-the-badge",
     ],
   },
   {
     org: "Blithcron '24",
-    name: "Blith '24 Website",
-    image: AML,
-    bio: "Maintaining the Academic Council page for IIT Gandhinagar is crucial for ensuring that students and faculty have access to essential information about academic policies, initiatives, and discussions. This page serves as a central hub for updates on council meetings, agendas, and outcomes, fostering transparency and engagement within the academic community.",
+    name: "Blithcron '24 Website",
+    image: Blith24,
+    bio: "Blithchron's official website—your one-stop destination for registrations, event details, schedules, and updates! ",
     stacks: [
       "https://img.shields.io/badge/Tech_Stack-MERN-blue?style=for-the-badge",
     ],
   },
 ];
 
-export default Data;
+export const AcadProjects: Array<Project> = [
+  {
+    org: "ES 112: World Of Engineering",
+    name: "VertiClean",
+    image: VertiClean,
+    bio: "SkyClean is an advanced robotic window cleaner designed to safely and efficiently clean windows of high-rise buildings without human intervention. Equipped withstate of the art control software, high-suction adhesion, and smart sensors, this robot ensures spotless glass surfaces while eliminating the risks associated with manual window cleaning at extreme heights.",
+    stacks: [
+      "https://img.shields.io/badge/Tech_Stack-MERN-blue?style=for-the-badge",
+    ],
+  },
+];

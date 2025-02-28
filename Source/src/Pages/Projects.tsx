@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Groupify } from "../Utils/Array";
-import ProjectData, { Project } from "../Data/Projects";
+import { AcadProjects, Project, WebProjects } from "../Data/Projects";
 import { Link } from "react-router-dom";
 // import Logo from "../Assets/Logo.png";
 
@@ -122,8 +122,21 @@ function ProjectShowCase({ isVisible }: { isVisible: boolean }) {
               <h1 className="flex-grow text-indigo-400 border-b-2 border-indigo-500 py-2 text-2xl px-1 mb-5 w-full">
                 Completed Projects
               </h1>
-              {Groupify(ProjectData, 3).map(
-                (projects: Array<any>, index: number) => {
+              {Groupify(WebProjects, 3).map(
+                (projects: Array<Project>, index: number) => {
+                  return <ProjectHolder projects={projects} key={index} />;
+                }
+              )}
+            </div>
+          </div>
+
+          <div className="container lg:px-20 px-5 lg:py-15 py-12 mx-auto">
+            <div className="flex flex-col text-center w-full mb-20">
+              <h1 className="flex-grow text-indigo-400 border-b-2 border-indigo-500 py-2 text-2xl px-1 mb-5 w-full">
+                Academic Projects
+              </h1>
+              {Groupify(AcadProjects, 3).map(
+                (projects: Array<Project>, index: number) => {
                   return <ProjectHolder projects={projects} key={index} />;
                 }
               )}
@@ -135,13 +148,13 @@ function ProjectShowCase({ isVisible }: { isVisible: boolean }) {
   );
 }
 
-function ProjectHolder({ projects }: { projects: Array<any> }) {
+function ProjectHolder({ projects }: { projects: Array<Project> }) {
   return (
     <>
       <section className="text-gray-400 bg-gray-900 body-font">
         <div className="container px-5 py-10 mx-auto">
           <div className="flex flex-wrap -m-4">
-            {projects.map((item: any, index: number) => {
+            {projects.map((item: Project, index: number) => {
               const project = item as Project;
               return (
                 <motion.div
@@ -181,7 +194,10 @@ function ProjectHolder({ projects }: { projects: Array<any> }) {
                               Closed Source
                             </div>
                           ) : (
-                            <Link to={project.source} className="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0">
+                            <Link
+                              to={project.source}
+                              className="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0"
+                            >
                               Learn More
                               <svg
                                 className="w-4 h-4 ml-2"

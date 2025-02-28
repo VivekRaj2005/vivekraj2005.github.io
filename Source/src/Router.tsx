@@ -4,7 +4,8 @@ import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Projects from "./Pages/Projects";
 import ProjectOverlay from "./Pages/ProjectOverlay";
-import ProjectData, { Project } from "./Data/Projects";
+import { Project, WebProjects } from "./Data/Projects";
+import ResponsibilitiesSkills from "./Pages/Experiance";
 
 function Router() {
   return (
@@ -13,8 +14,9 @@ function Router() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/experiance" element={<ResponsibilitiesSkills />} />
         <Route path="/project" element={<ProjectOverlay />}>
-          {ProjectData.map((project: Project, key: number) => {
+          {WebProjects.map((project: Project, key: number) => {
             if (project.page && project.source)
               return (
                 <Route
